@@ -3,7 +3,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>nikhil</groupId>
 	<artifactId>instaFirst</artifactId>
-	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>instaFirst Maven Webapp</name>
 	<url>http://maven.apache.org</url>
