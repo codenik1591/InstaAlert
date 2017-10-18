@@ -22,7 +22,12 @@ public class TwilioServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {/*
+			throws ServletException, IOException {
+		
+		System.out.println("In the Post Method..!!");
+		service(request, response);
+		
+		/*
 
 		post("/receive-sms", (req, res) -> {
 
@@ -56,12 +61,30 @@ public class TwilioServlet extends HttpServlet {
 		System.out.println("In service method..!!");
 		
 		post("/receive-sms", (req, res) -> {
+			
+			/*String body = request.getParameter("Body");
+			String message ;
+			*/
+			/*System.out.println("The contents in the Body is: "+body);
 
-			Message sms = new Message.Builder().body(new Body("Hey Nikhil, how are you??")).build();
+			if(body.toLowerCase().equals("hi")){
+				
+				message = "You sent "+body;
+			}
+			else{
+				message = "Not a valid mesage...!!";
+			}*/
+			
+			Message sms = new Message.Builder().body(new Body("Hello! All working fine..")).build();
+			MessagingResponse twiml = new MessagingResponse.Builder().message(sms).build();
+			return twiml.toXml();
+			
+			
+			/*Message sms = new Message.Builder().body(new Body("Hey Nikhil, how are you??")).build();
 
 			MessagingResponse twiml = new MessagingResponse.Builder().message(sms).build();
 
-			return twiml.toXml();
+			return twiml.toXml();*/
 		});
 	}
 }

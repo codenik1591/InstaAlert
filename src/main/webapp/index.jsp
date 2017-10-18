@@ -2,7 +2,7 @@
 <body>
 	<h2>Hello Nikhil</h2>
 
-	<form id="demo" action="TwilioServlet" method="service"></form>
+	<form id="demo" action="TwilioServlet" method="post"></form>
 	<h2>Message replied back</h2>
 	<%
 		System.out.println("In index.jsp");
